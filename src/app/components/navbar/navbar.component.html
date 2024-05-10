@@ -1,0 +1,33 @@
+<div class="navbar-container">
+    <span class="logo">delicious</span>
+    <button mat-icon-button class="share" aria-label="Example icon-button with share icon">
+        <mat-icon>share</mat-icon>
+    </button>
+    <p class="username"></p>
+    <!--desktop menu -->
+    <ul class="links">
+        <li><a href="" class="page-link">all recipes</a></li>
+        <li><a href="" class="page-link login-link">login </a></li>
+        <li><a href="" class="page-link">register</a></li>
+    </ul>
+    <!-- mobile menu -->
+    <div class="links-m">
+        <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
+            <mat-icon>more_vert</mat-icon>
+        </button> -->
+        <button mat-mini-fab class="menu-icon"  [matMenuTriggerFor]="menu"  aria-label="Example icon button with a menu icon">
+            <mat-icon>menu</mat-icon>
+          </button>
+        <mat-menu #menu="matMenu">
+            <button mat-menu-item>
+                <span>login</span>
+            </button>
+            <button mat-menu-item>
+                <span>register</span>
+            </button>
+            <button mat-menu-item>
+                <span>all recipes</span>
+            </button>
+        </mat-menu>
+    </div>
+</div>

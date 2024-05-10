@@ -1,0 +1,76 @@
+.navbar-container {
+    background-color: rgba(255, 197, 228, 0.388);
+    width: 100%;
+    color: rgb(116, 9, 9);
+    display: grid;
+    grid-template-areas:
+        'logo share a a a a username links  links-m';
+    align-items: center;
+    justify-items: center;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.share {
+    grid-area: share;
+}
+
+.username {
+    grid-area: username;
+}
+
+.page-link {
+    text-decoration: none;
+    color: rgb(116, 9, 9);
+    width: 100%;
+}
+
+ul.links {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    list-style: none;
+    width: 100%;
+    grid-area: links;
+    display: flex;
+    flex-direction: row;
+}
+
+.login-link {
+    background-color: rgb(116, 9, 9);
+    color: white;
+    border-radius: 20px;
+    padding: 5px 20px;
+    width: 100%;
+}
+
+.links-m {
+    visibility: hidden;
+}
+
+@media (max-width: 600px) {
+    .links {
+        visibility: hidden;
+    }
+
+    .empty-container {
+        display: none;
+    }
+
+    // .navbar-container {
+    //     grid-template-areas:
+    //         'logo share username links  ';
+    // }
+    .links-m {
+        visibility: visible;
+        grid-area: links-m;
+    }
+    .menu-icon{
+        background-color: rgba(209, 25, 92, 0);
+        border-radius: 0px;
+        box-shadow: none;
+        color:  rgb(116, 9, 9);
+    }
+}
