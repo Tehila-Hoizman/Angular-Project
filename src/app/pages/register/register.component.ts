@@ -14,7 +14,12 @@ import { FormsModule } from '@angular/forms';
   styleUrl: './register.component.scss'
 })
 export class RegisterComponent {
+  response: object = {};
+  error: string = '';
   email:string='';
+  hide1 = true;
+  hide2 = true;
+
   constructor(private activatedRoute: ActivatedRoute) {
 
   activatedRoute.params.subscribe(p => {
@@ -23,4 +28,7 @@ export class RegisterComponent {
     this.email = p['email'];
   })
 }
+  register(username:string,email: string, password: string){
+
+  }
 }

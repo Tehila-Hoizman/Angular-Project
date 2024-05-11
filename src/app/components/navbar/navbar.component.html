@@ -20,11 +20,15 @@
           </button>
         <mat-menu #menu="matMenu">
             <button mat-menu-item>
+
                 <span>login</span>
             </button>
-            <button mat-menu-item>
-                <span>register</span>
-            </button>
+            
+            <li class="nav-item" mat-menu-item>
+                <a class="nav-link" routerLinkActive="active" routerLink="register">register</a>
+
+                <!-- <span>register</span> -->
+            </li>
             <button mat-menu-item>
                 <span>all recipes</span>
             </button>

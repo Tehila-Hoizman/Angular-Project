@@ -7,11 +7,13 @@ import { MatGridListModule } from '@angular/material/grid-list';
 import { User } from '../../shared/models/user';
 import { UsersService } from '../../shared/services/users.service';
 import { Router } from '@angular/router';
+import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
+import { CommonModule, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatGridListModule],
+  imports: [ FormsModule,JsonPipe,MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatGridListModule,CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })

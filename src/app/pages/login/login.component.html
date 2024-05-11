@@ -1,20 +1,36 @@
 <mat-grid-list cols="1" class="container">
-    <h1 class="title">login</h1>
     <div class="login-container">
-        <mat-form-field class="example-full-width">
-            <mat-label>email</mat-label>
-            <input matInput placeholder="" value="" #email>
-        </mat-form-field>
 
-        <mat-form-field>
-            <mat-label>Enter your password</mat-label>
-            <input matInput [type]="hide ? 'password' : 'text'" #password>
-            <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
-                [attr.aria-pressed]="hide">
-                <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
-            </button>
-        </mat-form-field>
-        <button mat-flat-button color="primary" (click)="login(email.value,password.value)">login</button>
-        <div style="color: red;">{{error}}</div>
-        </div>
+    <h1 class="title">login</h1>
+        <form ngForm #loginForm="ngForm">
+            <mat-form-field class="inp">
+                <mat-label>email</mat-label>
+                <input name="email" id="email" ngModel #email="ngModel" pattern=".+@.+\..+" matInput placeholder=""
+                    value="" required>
+            </mat-form-field>
+            <div *ngIf="email.invalid && (email.dirty || email.touched)" class="alert">
+                <div *ngIf="email.errors?.['required']">email is required.</div>
+                <div *ngIf="email.errors?.['pattern']">email invalid</div>
+            </div>
+            <mat-form-field class="inp">
+                <mat-label>Enter your password</mat-label>
+                <input name="password" required ngModel #password="ngModel" matInput
+                    [type]="hide ? 'password' : 'text'">
+                <button mat-icon-button matSuffix (click)="hide = !hide" [attr.aria-label]="'Hide password'"
+                    [attr.aria-pressed]="hide">
+                    <mat-icon>{{hide ? 'visibility_off' : 'visibility'}}</mat-icon>
+                </button>
+            </mat-form-field>
+            <div *ngIf="password.invalid && (password.dirty || password.touched)" class="alert">
+                <div *ngIf="password.errors?.['required']">password is required.</div>
+            </div>
+            <div *ngIf="error!='' " class="alert">
+                <div>{{error}}</div>
+            </div>
+
+            <button [disabled]="loginForm.invalid" mat-flat-button class="login-btn btn "
+                (click)="login(email.value,password.value)">login</button>
+        </form>
+
+    </div>
 </mat-grid-list>
