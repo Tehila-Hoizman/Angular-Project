@@ -3,24 +3,28 @@
    flex-direction: column;
    align-items: center;
    justify-content: center;
-   height: 91vh;
 }
 .register-container{
    display: flex;
    flex-direction: column;
    align-items: stretch;
-   width: 40%;
+   width: 100%;
+   margin-top: 10px;
 }
 .title{
    text-align: center;
    font-family: cursive;
 }
-.alert div {
+.alert{ 
+   width: 40%;
+
+   div{
    background-color: #fed3d3;
    color: #820000;
    padding: 0.75rem;
    margin-bottom: 1rem;
  }
+}
  .inp{
     width: 46%;
     margin: 10px;

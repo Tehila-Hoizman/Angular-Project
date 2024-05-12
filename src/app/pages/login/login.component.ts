@@ -43,6 +43,7 @@ export class LoginComponent {
   }
   saveAtLocalStorage(u: User) {
     localStorage.setItem("user", JSON.stringify(u));
+    this.userService.isGuest=false;
     this.router.navigateByUrl("allRecipes")
   }
 }
