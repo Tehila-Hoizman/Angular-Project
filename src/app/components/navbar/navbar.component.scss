@@ -45,9 +45,12 @@ ul.links {
     padding: 5px 20px;
     width: 100%;
 }
-
+//nobile
 .links-m {
     visibility: hidden;
+}
+.links-m-ul{
+list-style: none;
 }
 
 @media (max-width: 600px) {
@@ -58,11 +61,6 @@ ul.links {
     .empty-container {
         display: none;
     }
-
-    // .navbar-container {
-    //     grid-template-areas:
-    //         'logo share username links  ';
-    // }
     .links-m {
         visibility: visible;
         grid-area: links-m;

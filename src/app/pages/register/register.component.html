@@ -1,12 +1,12 @@
 <mat-grid-list cols="1" class="container">
+    <div class="register-body">
     <div class="register-container">
-
-    <h1 class="title">register</h1>
+        <h1 class="title">register</h1>
         <form ngForm #registerForm="ngForm">
             <mat-form-field class="inp">
                 <mat-label>username</mat-label>
-                <input name="username" id="username" ngModel #username="ngModel"  matInput placeholder=""
-                    value="" required>
+                <input name="username" id="username" ngModel #username="ngModel" matInput placeholder="" value=""
+                    required>
             </mat-form-field>
             <div *ngIf="username.invalid && (username.dirty || username.touched)" class="alert">
                 <div *ngIf="email.errors?.['required']">username is required.</div>
@@ -46,13 +46,11 @@
             </div>
             <mat-form-field class="inp">
                 <mat-label>city</mat-label>
-                <input name="city" id="city" ngModel #city="ngModel" matInput placeholder=""
-                    value="" >
+                <input name="city" id="city" ngModel #city="ngModel" matInput placeholder="" value="">
             </mat-form-field>
             <mat-form-field class="inp">
                 <mat-label>street</mat-label>
-                <input name="street" id="street" ngModel #street="ngModel" matInput placeholder=""
-                    value="" >
+                <input name="street" id="street" ngModel #street="ngModel" matInput placeholder="" value="">
             </mat-form-field>
             <mat-form-field class="inp">
                 <mat-label>house number</mat-label>
@@ -61,9 +59,8 @@
             </mat-form-field>
 
             <button [disabled]="registerForm.invalid" mat-flat-button class="register-btn btn "
-                (click)="register(username.value,email.value,password.value)"
-                >login</button>
+                (click)="register(username.value,email.value,password.value)">register</button>
         </form>
-
+    </div>
     </div>
 </mat-grid-list>

@@ -6,32 +6,21 @@
     <p class="username"></p>
     <!--desktop menu -->
     <ul class="links">
-        <li><a href="" class="page-link">all recipes</a></li>
-        <li><a href="" class="page-link login-link">login </a></li>
-        <li><a href="" class="page-link">register</a></li>
+        <li><a routerLink="" class="page-link" routerLinkActive="router-link-active">all recipes</a></li>
+        <li><a routerLink="login" class="page-link login-link" routerLinkActive="router-link-active">login </a></li>
+        <li><a routerLink="register" class="page-link" routerLinkActive="router-link-active">register</a></li>
     </ul>
     <!-- mobile menu -->
     <div class="links-m">
-        <!-- <button mat-icon-button [matMenuTriggerFor]="menu" aria-label="Example icon-button with a menu">
-            <mat-icon>more_vert</mat-icon>
-        </button> -->
         <button mat-mini-fab class="menu-icon"  [matMenuTriggerFor]="menu"  aria-label="Example icon button with a menu icon">
             <mat-icon>menu</mat-icon>
           </button>
         <mat-menu #menu="matMenu">
-            <button mat-menu-item>
-
-                <span>login</span>
-            </button>
-            
-            <li class="nav-item" mat-menu-item>
-                <a class="nav-link" routerLinkActive="active" routerLink="register">register</a>
-
-                <!-- <span>register</span> -->
-            </li>
-            <button mat-menu-item>
-                <span>all recipes</span>
-            </button>
+            <ul class="links-m-ul">
+                <li><a routerLink="" class="page-link" routerLinkActive="router-link-active">all recipes</a></li>
+                <li><a routerLink="login" class="page-link" routerLinkActive="router-link-active">login </a></li>
+                <li><a routerLink="register" class="page-link" routerLinkActive="router-link-active">register</a></li>
+            </ul>
         </mat-menu>
     </div>
 </div>
