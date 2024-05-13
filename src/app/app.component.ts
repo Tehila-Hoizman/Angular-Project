@@ -3,11 +3,12 @@ import { RouterOutlet } from '@angular/router';
 import { LoginComponent} from './pages/login/login.component'
 import { NavbarComponent } from './components/navbar/navbar.component';
 import {MatGridListModule} from '@angular/material/grid-list';
+import { RecipeComponent } from './components/recipe/recipe.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,LoginComponent,NavbarComponent,MatGridListModule],
+  imports: [RouterOutlet,LoginComponent,NavbarComponent,RecipeComponent,MatGridListModule],
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss'
 })

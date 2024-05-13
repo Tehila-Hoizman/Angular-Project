@@ -74,7 +74,7 @@
                         {{error}}
                     </div>
                 </div>
-                <button mat-flat-button class="register-btn btn ">register</button>
+                <button [disabled]="registerForm.invalid" mat-flat-button class="register-btn btn ">register</button>
                 <!-- <button [disabled]="registerForm.invalid" mat-flat-button class="register-btn btn ">register</button> -->
             </form>
             <!-- <div>{{registerForm.value | json }}</div> -->

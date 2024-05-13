@@ -6,14 +6,14 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatGridListModule } from '@angular/material/grid-list';
 import { User } from '../../shared/models/user';
 import { UsersService } from '../../shared/services/users.service';
-import { Router } from '@angular/router';
+import { Router, RouterLink, RouterLinkActive } from '@angular/router';
 import { FormControl, FormGroup, FormsModule, NgForm, ReactiveFormsModule, Validators } from '@angular/forms';
 import { CommonModule, JsonPipe } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [ FormsModule,JsonPipe,MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatGridListModule,CommonModule, ReactiveFormsModule],
+  imports: [ RouterLink, RouterLinkActive,FormsModule,JsonPipe,MatFormFieldModule, MatInputModule, MatButtonModule, MatIconModule, MatGridListModule,CommonModule, ReactiveFormsModule],
   templateUrl: './login.component.html',
   styleUrl: './login.component.scss'
 })
@@ -35,8 +35,8 @@ export class LoginComponent {
         (err) => {
           this.error = err.error.error.message;
           //המייל אינו קיים במערכת - נעביר להרשמה
-          if (this.error == "user doesn't exist")
-            this.router.navigateByUrl(`register/${email}`)
+          // if (this.error == "user doesn't exist")
+            // this.router.navigateByUrl(`register/${email}`)
         }
       )
 

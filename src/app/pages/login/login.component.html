@@ -30,6 +30,7 @@
 
             <button [disabled]="loginForm.invalid" mat-flat-button class="login-btn btn "
                 (click)="login(email.value,password.value)">login</button>
+                <span>you don't have an account? <a routerLink="register" class="page-link" routerLinkActive="router-link-active">register here</a></span>
         </form>
 
     </div>

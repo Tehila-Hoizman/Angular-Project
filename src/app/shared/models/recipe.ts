@@ -1,14 +1,14 @@
 import { Layer } from "./layer";
 
 export interface Recipe {
-    id:string;
+    _id:string;
     name:string;
-    categoryId:string;
+    categories:[string];
     preparationTimeInMinute:number;
     level:number;
     addDate:Date;
     layers:[Layer]
     preparation:[string];
-    userId:number;
+    user:{_id:string,name:string};
     image:string;
 }

@@ -6,7 +6,7 @@
     <p class="username">{{username}}</p>
     <!--desktop menu -->
     <ul class="links">
-        <li><a routerLink="" class="page-link" routerLinkActive="router-link-active">all recipes</a></li>
+        <li><a routerLink="all-recipes" class="page-link" routerLinkActive="router-link-active">all recipes</a></li>
         <li  *ngIf="publicUserService.isGuest"><a routerLink="login" class="page-link login-link" routerLinkActive="router-link-active">login </a></li>
         <li  *ngIf="publicUserService.isGuest
         "><a routerLink="register" class="page-link" routerLinkActive="router-link-active">register</a></li>

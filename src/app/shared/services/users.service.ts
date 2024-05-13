@@ -9,9 +9,6 @@ export class UsersService {
   private baseUrl = 'http://localhost:5000/users';
 public isGuest=localStorage.getItem("user")?false:true;
   constructor(private http: HttpClient) { }
-  public getIsGuest(): boolean {
-    return this.isGuest;
-  }
   login(user:object){
     return this.http.post<User>(`${this.baseUrl}/signin`, user);
   }
